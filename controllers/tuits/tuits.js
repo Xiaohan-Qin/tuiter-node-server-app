@@ -10,6 +10,7 @@ export default [
     "tuit": "You want to wake up in the morning and think the future is going to be great - and that’s what being a spacefaring civilization is all about. It’s about believing in the future and thinking that the future will be better than the past. And I can’t think of anything more exciting than going out there and being among the stars",
     "liked": true,
     "likes": 2345,
+    "dislikes": 29,
     "replies": 123,
     "retuits": 432
   },
@@ -24,6 +25,7 @@ export default [
     "tuit": "Nancy Pelosi, who has led Democrats in the US House of Representatives for almost two decades, has announced she is standing down from the role. The 82-year-old is the most powerful Democrat in Congress and the first woman to serve as speaker of the House.",
     "liked": true,
     "likes": 2345,
+    "dislikes": 5,
     "replies": 123,
     "retuits": 432
   },
