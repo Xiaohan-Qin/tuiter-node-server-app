@@ -1,16 +1,17 @@
-// import posts from "./tuits.js";
-// let tuits = posts;
-
-import * as tuitsDao from '../tuits/tuits-dao.js'
+import * as tuitsDao from './tuits-dao.js'
 
 const createTuit = async (req, res) => {
   const newTuit = req.body;
-  // newTuit._id = (new Date()).getTime() + "";
   newTuit.likes = 0;
   newTuit.dislikes = 0;
+  newTuit.replies = 0;
+  newTuit.retuits = 0;
   newTuit.liked = false;
+  newTuit.username = "Northeastern University";
+  newTuit.handle = "@northeastern_university";
+  newTuit.image = "https://upload.wikimedia.org/wikipedia/en/b/bd/Northeastern_University_seal.svg";
+  newTuit.time = "2s";
   const insertedTuit = await tuitsDao.createTuit(newTuit);
-  // tuits.push(newTuit);
   res.json(insertedTuit);
 }
 
@@ -22,8 +23,6 @@ const findTuits = async (req, res) => {
 const updateTuit = async (req, res) => {
   const tuitdIdToUpdate = req.params.tid;
   const updates = req.body;
-  // const tuitIndex = tuits.findIndex((t) => t._id.toString() === tuitdIdToUpdate);
-  // tuits[tuitIndex] = {...tuits[tuitIndex], ...updates};
   const status = await tuitsDao.updateTuit(tuitdIdToUpdate, updates);
   res.json(status);
 }
@@ -32,7 +31,6 @@ const updateTuit = async (req, res) => {
 const deleteTuit = async (req, res) => {
   const tuitdIdToDelete = req.params.tid;
   const status = await tuitsDao.deleteTuit(tuitdIdToDelete);
-  // tuits = tuits.filter((t) => t._id.toString() !== tuitdIdToDelete);
   res.json(status);
 }
 
